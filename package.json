@@ -1,0 +1,20 @@
+{
+  "name": "y",
+  "version": "0.0.1",
+  "description": "Discord bot that displays warcraft logs reports",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "warcraft",
+    "discord",
+    "bot"
+  ],
+  "author": "Christophe Sundas",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "dotenv": "^8.2.0"
+  }
+}
