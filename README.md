@@ -4,5 +4,7 @@ Useful links:
 
 https://discordjs.guide/
 
-
+How to start:
 - copy .example.env file as .env and replace THE TOKEN value by yours
+- install dependancies
+-  npm run start

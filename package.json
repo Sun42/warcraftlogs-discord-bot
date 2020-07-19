@@ -1,17 +1,29 @@
 {
-  "name": "y",
+  "name": "warcraftlogs-discord-bot",
   "version": "0.0.1",
-  "description": "Discord bot that displays warcraft logs reports",
+  "description": "Discord bot, for warcraft logs reporting",
   "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url" : "https://github.com/Sun42/warcraftlogs-discord-bot"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "test": "npm run unit",
+    "unit": "jest --config test/unit/jest.conf.js --coverage",
+    "lint": "eslint --ext .js  src test/unit"
   },
   "keywords": [
     "warcraft",
+    "logs",
     "discord",
     "bot"
   ],
-  "author": "Christophe Sundas",
+  "author": {
+    "name" : "Christophe Sundas",
+    "email": "sundas.christophe@gmail.com",
+    "url" : "https://github.com/Sun42"
+  },
   "license": "ISC",
   "dependencies": {
     "discord.js": "^12.2.0",
