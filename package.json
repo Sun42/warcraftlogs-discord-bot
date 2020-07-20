@@ -5,7 +5,7 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url" : "https://github.com/Sun42/warcraftlogs-discord-bot"
+    "url": "https://github.com/Sun42/warcraftlogs-discord-bot"
   },
   "scripts": {
     "start": "node app.js",
@@ -20,13 +20,14 @@
     "bot"
   ],
   "author": {
-    "name" : "Christophe Sundas",
+    "name": "Christophe Sundas",
     "email": "sundas.christophe@gmail.com",
-    "url" : "https://github.com/Sun42"
+    "url": "https://github.com/Sun42"
   },
   "license": "ISC",
   "dependencies": {
     "discord.js": "^12.2.0",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "eslint": "^7.5.0"
   }
 }

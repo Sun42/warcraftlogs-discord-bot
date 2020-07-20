@@ -3,7 +3,7 @@ const fs = require('fs');
 // configs
 require('dotenv').config();
 const TOKEN = process.env.TOKEN;
-const { prefix } = require('./config.json')
+const { prefix } = require('./config.json');
 
 const discord = require('discord.js');
 const client = new discord.Client();
@@ -19,7 +19,7 @@ for (const file of commandFiles) {
 }
 
 client.once('ready', () => {
-   console.log('Client ready');
+    console.log('Client ready');
 });
 
 client.on('message', (message) => {
@@ -31,7 +31,7 @@ client.on('message', (message) => {
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const commandName = args.shift().toLowerCase();
     if (!client.commands.has(commandName)) return;
-    command = client.commands.get(commandName)
+    const command = client.commands.get(commandName);
     try {
         command.execute(message, args);
     }
@@ -39,6 +39,6 @@ client.on('message', (message) => {
         console.error(error);
         message.reply('The was an error trying to execute that command.');
     }
- });
+});
 
 client.login(TOKEN);
