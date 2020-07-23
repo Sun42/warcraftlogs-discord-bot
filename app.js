@@ -24,14 +24,20 @@ client.once('ready', () => {
 
 client.on('message', (message) => {
     if (!message.content.startsWith(prefix) || message.author.bot) {
-        console.log('Invalid message: ' + message.content);
         return;
     }
 
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const commandName = args.shift().toLowerCase();
-    if (!client.commands.has(commandName)) return;
-    const command = client.commands.get(commandName);
+    const command = client.commands.get(commandName) || client.commands.find(elem => elem.aliases && elem.aliases.includes(commandName));
+    if (!command) return;
+    if (command.args && !args.length) {
+        let reply = `You didn't provide enough arguments, ${message.author}.`;
+        if (command.usage) {
+            reply += `\n${prefix}${command.name} ${command.usage}`;
+        }
+        return message.channel.send(reply);
+    }
     try {
         command.execute(message, args);
     }
